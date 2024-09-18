@@ -103,4 +103,5 @@ public interface IOrdersService
         OrderWhereUniqueInput uniqueId,
         PaymentWhereUniqueInput[] paymentsId
     );
+    public Task<OrderBalanceResult> SpGetOrderBalance(OrderBalanceArgs orderBalanceArgsDto);
 }
