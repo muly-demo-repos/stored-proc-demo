@@ -416,6 +416,7 @@ public abstract class OrdersServiceBase : IOrdersService
 
     public async Task<OrderBalanceResult> SpGetOrderBalance(OrderBalanceArgs orderBalanceArgsDto)
     {
-        throw new NotImplementedException();
+        var balanceParam = await _context.GetOrderBalance(orderBalanceArgsDto.OrderId);
+        return new OrderBalanceResult { OrderBalance = (double)balanceParam.Value };
     }
 }
